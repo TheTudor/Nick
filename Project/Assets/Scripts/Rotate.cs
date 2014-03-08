@@ -91,7 +91,7 @@ public class Rotate : MonoBehaviour {
         angle = normalizeAngle(transform.eulerAngles.x - initRot.x);
         if (angle > yViewRestriction*(-1) && speedY > 0 || angle < yViewRestriction && speedY < 0)
         {
-            Debug.Log("delta: " + (angle).ToString());
+           //Debug.Log("delta: " + (angle).ToString());
 
             transform.Rotate(Vector3.left, Time.deltaTime * (float)speedY);
         }
