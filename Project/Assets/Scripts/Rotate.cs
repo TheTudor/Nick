@@ -24,7 +24,12 @@ public class Rotate : MonoBehaviour {
     public EyeXGazePointType gazePointType = EyeXGazePointType.GazeLightlyFiltered;
     public Vector3 initRot;
 
-   
+	public string cameraId = "Camera";
+	
+	private GameObject c;
+	//private float _scaleFactor = 0;
+	// Use this for initialization
+
     public void Awake()
     {
         centerX = Screen.width / 2;
@@ -48,6 +53,7 @@ public class Rotate : MonoBehaviour {
 	void Start () 
     {
         initRot = transform.rotation.eulerAngles;
+		c = GameObject.Find(cameraId);
 	}
 	
 	// Update is called once per frame
@@ -86,14 +92,15 @@ public class Rotate : MonoBehaviour {
         var angle = normalizeAngle(transform.eulerAngles.y - initRot.y);
         if (angle < xViewRestriction && speedX > 0 || angle > xViewRestriction*(-1) && speedX < 0)
         {
-            transform.Rotate(Vector3.up, Time.deltaTime * (float)speedX);
+            transform.Rotate(Vector3.up, Time.deltaTime * (float)speedX,Space.World);
+			//Debug.Log("delta: " + (c.transform.up).ToString());
         }
         angle = normalizeAngle(transform.eulerAngles.x - initRot.x);
         if (angle > yViewRestriction*(-1) && speedY > 0 || angle < yViewRestriction && speedY < 0)
         {
            //Debug.Log("delta: " + (angle).ToString());
 
-            transform.Rotate(Vector3.left, Time.deltaTime * (float)speedY);
+			transform.Rotate(Vector3.left, Time.deltaTime * (float)speedY);
         }
 
 

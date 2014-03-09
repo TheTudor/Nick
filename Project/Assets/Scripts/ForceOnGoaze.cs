@@ -12,7 +12,7 @@ public class ForceOnGoaze : EyeXInteractionBehaviour {
     public float shakeFactor = 10f;
     public int shakeLength = 10;
     private int shakeStep = 0;
-    public string cameraId = "Main Camera";
+    public string cameraId = "Camera";
 
     public float destroyDistance = 10;
 
@@ -22,7 +22,7 @@ public class ForceOnGoaze : EyeXInteractionBehaviour {
     //private float _scaleFactor = 0;
 	// Use this for initialization
 	void Start () {
-        c = GameObject.Find("Main Camera");
+        c = GameObject.Find(cameraId);
 	}
 	
 	// Update is called once per frame
@@ -32,9 +32,10 @@ public class ForceOnGoaze : EyeXInteractionBehaviour {
         
         // Update the scale factor depending on whether the eye gaze is on the object or not.
       //  Debug.Log(_hasFocus.ToString());
-        if (_hasFocus)
+		Debug.Log(_hasFocus.ToString());
+
+		if (_hasFocus)
         {
-            Debug.Log(_hasFocus.ToString());
             if(shakeStep < shakeLength/2)
             {
                 transform.Translate(Vector3.back * Time.deltaTime*shakeFactor);
@@ -73,8 +74,8 @@ public class ForceOnGoaze : EyeXInteractionBehaviour {
     {
         // NOTE: this method is called from a worker thread, so it must not access any game objects.
         // Therefore, we store the state in a variable and handle the state change in the Update() method.
-        
-        foreach (var behavior in @event.Behaviors)
+		Debug.Log("gaze");
+		foreach (var behavior in @event.Behaviors)
         {
             GazeAwareEventParams eventData;
             if (behavior.TryGetGazeAwareEventParams(out eventData))
