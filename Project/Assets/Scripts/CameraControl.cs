@@ -8,7 +8,7 @@ public class CameraControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		offset = transform.position;
+		offset = transform.position - ball.transform.position;
 
 	}
 	
