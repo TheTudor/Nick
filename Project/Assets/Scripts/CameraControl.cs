@@ -16,6 +16,11 @@ public class CameraControl : MonoBehaviour {
 	void LateUpdate () {
 
 		transform.position = ball.transform.position + offset;
-
+		if (Input.GetKey (KeyCode.Q)) {
+			transform.Rotate(0.0f, -1.0f, 0.0f);	
+		}
+		if (Input.GetKey (KeyCode.E)) {
+			transform.Rotate (0.0f, 1.0f, 0.0f);		
+		}
 	}
 }

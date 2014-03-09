@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SphereControl: MonoBehaviour 
 {
+
 	public float speed;
 	public string cameraId = "Camera";
 	
@@ -11,10 +12,12 @@ public class SphereControl: MonoBehaviour
 	// Use this for initialization
 	void Start () {
 		c = GameObject.Find(cameraId);
+
+	
 	}
 	
 
-	void FixedUpdate(){
+	/*void FixedUpdate(){
 		
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical =   Input.GetAxis ("Vertical");
@@ -28,5 +31,34 @@ public class SphereControl: MonoBehaviour
 		//Vector3 movement = new Vector3 (c.transform.position.x*moveHorizontal, 0.0f, c.transform.position.z*moveVertical);
 		
 		rigidbody.AddForce (movement * speed * Time.deltaTime);
+	}*/
+
+	void Update() {
+		DummyLeapController targetScript = this.gameObject.GetComponent<DummyLeapController>();
+		float distance = targetScript.distance;
+		float theta = targetScript.theta;
+
+		transform.Translate ((c.transform.rotation * Vector3.forward) * Time.deltaTime * distance);
+
+		if (Input.GetKey(KeyCode.W)) 
+		{
+			transform.Translate(Vector3.forward*Time.deltaTime*speed);
+		}
+		
+		if (Input.GetKey(KeyCode.S)) 
+		{
+			transform.Translate(Vector3.back*Time.deltaTime*speed);
+		}
+		
+		if (Input.GetKey(KeyCode.A)) 
+		{
+			transform.Translate(Vector3.left*Time.deltaTime*speed);
+		}
+		
+		if (Input.GetKey(KeyCode.D)) 
+		{
+			transform.Translate(Vector3.right*Time.deltaTime*speed);
+		}
+
 	}
 }
