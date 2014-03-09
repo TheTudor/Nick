@@ -46,7 +46,44 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CameraFollow.cs" />
+     <Compile Include="Assets\Player.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\ActivatableMenuItems.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\GameMenu.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\GazePointVisualizer.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\GrowOnGaze.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\Occluder.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\TitleGUI.cs" />
+     <Compile Include="Assets\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\EyeX\EyeXBehaviors.cs" />
+     <Compile Include="Assets\Scripts\EyeX\EyeXGazePoint.cs" />
+     <Compile Include="Assets\Scripts\EyeX\EyeXGazePointProvider.cs" />
+     <Compile Include="Assets\Scripts\EyeX\EyeXGazePointType.cs" />
+     <Compile Include="Assets\Scripts\EyeX\EyeXGlobalInteractor.cs" />
+     <Compile Include="Assets\Scripts\EyeX\EyeXHost.cs" />
+     <Compile Include="Assets\Scripts\EyeX\EyeXInteractionBehaviour.cs" />
+     <Compile Include="Assets\Scripts\EyeX\EyeXInteractor.cs" />
+     <Compile Include="Assets\Scripts\EyeX\ProjectedRect.cs" />
+     <Compile Include="Assets\Scripts\EyeX\ScreenHelpers.cs" />
+     <Compile Include="Assets\Scripts\EyeX\Win32Helpers.cs" />
+     <Compile Include="Assets\Scripts\ForceOnGoaze.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
+     <Compile Include="Assets\Scripts\Rotate.cs" />
+     <Compile Include="Assets\SphereControl.cs" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+ <Reference Include="LeapCSharp.NET3.5">
+ <HintPath>Assets\Plugins\LeapCSharp.NET3.5.dll</HintPath>
+ </Reference>
+ <Reference Include="Tobii.EyeX.Client.Net20">
+ <HintPath>Assets\Plugins\Tobii.EyeX.Client.Net20.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{EB8AA23C-2655-E22B-2EBB-05697394EDB3}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{6F4D0F38-84A9-F27A-19D7-9961C098D6DA}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
