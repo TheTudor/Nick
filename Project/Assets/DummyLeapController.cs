@@ -3,8 +3,8 @@ using System.Collections;
 
 public class DummyLeapController : MonoBehaviour {
 
-	public float distance = 50;
-	public float theta = 0;
+	public float distance;
+	public float theta;
 	// Use this for initialization
 	void Start () {
 	

@@ -12,7 +12,7 @@ public class SphereControl: MonoBehaviour
 	// Use this for initialization
 	void Start () {
 		c = GameObject.Find(cameraId);
-
+	
 	
 	}
 	
@@ -42,22 +42,22 @@ public class SphereControl: MonoBehaviour
 
 		if (Input.GetKey(KeyCode.W)) 
 		{
-			transform.Translate(Vector3.forward*Time.deltaTime*speed);
+			transform.Translate((new Vector3 (0.0f, 0.0f, 1.0f))*Time.deltaTime*speed,Space.World);
 		}
 		
 		if (Input.GetKey(KeyCode.S)) 
 		{
-			transform.Translate(Vector3.back*Time.deltaTime*speed);
+			transform.Translate((new Vector3 (0.0f, 0.0f, -1.0f))*Time.deltaTime*speed,Space.World);
 		}
 		
 		if (Input.GetKey(KeyCode.A)) 
 		{
-			transform.Translate(Vector3.left*Time.deltaTime*speed);
+				transform.Translate((new Vector3 (-1.0f, 0.0f, 0.0f))*Time.deltaTime*speed,Space.World);
 		}
 		
 		if (Input.GetKey(KeyCode.D)) 
 		{
-			transform.Translate(Vector3.right*Time.deltaTime*speed);
+					transform.Translate((new Vector3 (1.0f, 0.0f, 0.0f))*Time.deltaTime*speed,Space.World);
 		}
 
 	}

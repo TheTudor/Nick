@@ -17,10 +17,11 @@ public class CameraControl : MonoBehaviour {
 
 		transform.position = ball.transform.position + offset;
 		if (Input.GetKey (KeyCode.Q)) {
-			transform.Rotate(0.0f, -1.0f, 0.0f);	
+			transform.Rotate(Vector3.up,Time.deltaTime * -100,Space.World);	
 		}
 		if (Input.GetKey (KeyCode.E)) {
-			transform.Rotate (0.0f, 1.0f, 0.0f);		
+		
+			transform.Rotate (Vector3.up, Time.deltaTime * 100, Space.World);
 		}
 	}
 }
